@@ -1,0 +1,30 @@
+.question
+  .question_content=@question.content
+  .question_user
+    Asked by
+    =@question.user.email
+  .question_location
+    At
+    =@question.location
+  
+.question_links
+  .edit_question_link= link_to 'Edit Question', edit_question_path(@question)
+  .delete_question_link= link_to 'Delete Question', question_path(@question), method: :delete, data: { confirm: 'Are you sure?' }
+  
+.answer_form
+  =form_for [@question, Answer.new] do |f|
+    =f.text_area :content
+    =f.submit 'Answer'
+    
+- if @answers.blank?
+  .message No one has answered this question yet
+- else
+  .answers
+    -for answer in @answers
+      .answer
+        =answer.content
+        .answer_user
+          Answered by
+          =answer.user.email
+        =link_to 'Edit Answer', edit_answer_path(answer)
+        =link_to 'Delete Answer', answer_path(answer), method: :delete, data: { confirm: 'Are you sure?' }

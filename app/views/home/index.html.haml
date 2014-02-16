@@ -1,0 +1,26 @@
+- if user_signed_in?
+  Welcome,
+  = current_user.email
+  =link_to "Log out", destroy_user_session_path, :method => :delete
+- else
+  =link_to 'Sign In', new_session_path(:user)
+  =link_to 'Sign Up', new_registration_path(:user)
+  
+=link_to 'Ask a question', new_question_path
+- if @questions.blank?
+  .message There is no question!
+- else
+  .questions
+    - for question in @questions
+      .question
+        .question_content=link_to question.content, question_path(question)
+        .question_user
+          Asked by
+          =question.user.email
+        .question_location
+          At
+          =question.location
+        .num_answers
+          =question.answers.count
+          Answers
+
