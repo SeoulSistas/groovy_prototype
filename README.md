@@ -7,3 +7,5 @@ groovy_prototype
 * Devise (https://github.com/plataformatec/devise)
 * Haml
 * PostgreSQL
+
+Deployed with Heroku: http://groovy-prototype.herokuapp.com
