@@ -1,4 +1,9 @@
 groovy_prototype
 ================
 
-Prototype of Groovy created with Rails framework
+Groovy Web Prototype
+
+Ruby on Rails 4.0.2
+Devise (https://github.com/plataformatec/devise)
+Haml
+PostgreSQL
