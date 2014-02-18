@@ -1,7 +1,7 @@
 source 'https://rubygems.org'
 
 gem 'thin'
-# gem 'pg'
+gem 'pg'
 gem 'devise'
 gem 'haml'
 
