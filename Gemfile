@@ -1,7 +1,7 @@
 source 'https://rubygems.org'
 
 gem 'thin'
-gem 'pg'
+# gem 'pg'
 gem 'devise'
 gem 'haml'
 
@@ -45,3 +45,5 @@ end
 
 # Use debugger
 # gem 'debugger', group: [:development, :test]
+
+gem 'sqlite3'

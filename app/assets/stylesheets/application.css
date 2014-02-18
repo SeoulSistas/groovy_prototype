@@ -11,3 +11,21 @@
  *= require_self
  *= require_tree .
  */
+
+#map-canvas {
+    height: 500px;
+    width: 75%;
+}
+
+#question_radius {
+    display: none;
+}
+
+#question_latitude  {
+    display: none;
+}
+
+#question_longitude  {
+    display: none;
+}
+

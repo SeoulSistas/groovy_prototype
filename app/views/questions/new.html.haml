@@ -2,6 +2,18 @@
   =form_for @question do |f|
     =f.label :content, "What is your question?"
     =f.text_area :content
-    =f.label :location, "Where is your location?"
-    =f.text_field :location
+    =f.text_area :radius
+    =f.text_area :latitude
+    =f.text_area :longitude
     =f.submit 'Ask'
+
+#panel
+  %input#address{:type => "textbox", :value => "Stanford, CA"}
+  %input{:type => "submit", :value => "Go!", :onclick => "codeAddress()"}
+
+
+#info
+/ #latitude
+/ #longitude
+#map-canvas
+

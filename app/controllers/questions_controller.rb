@@ -36,6 +36,6 @@ class QuestionsController < ApplicationController
   private
       
     def question_params
-      params.require(:question).permit(:content, :location)
+      params.require(:question).permit(:content, :radius, :longitude, :latitude)
     end
 end
