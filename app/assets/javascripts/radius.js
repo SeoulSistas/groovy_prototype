@@ -206,7 +206,6 @@ var distanceWidget;
 
 
 function init() {
-  setTimeout(function() { return false; }, 1000);
   geocoder = new google.maps.Geocoder();
   var mapDiv = document.getElementById('map-canvas');
   map = new google.maps.Map(mapDiv, {
@@ -218,4 +217,4 @@ function init() {
   setupDistanceWidget();
 }
 
-google.maps.event.addDomListener(window, 'load', init);
+google.maps.event.addDomListener(window, 'page:load', init);
