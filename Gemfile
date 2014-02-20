@@ -5,6 +5,7 @@ gem 'pg'
 gem 'devise'
 gem 'haml'
 gem 'rails_12factor', group: :production
+gem 'gmaps4rails', '~> 2.0.1', git: 'https://github.com/fiedl/Google-Maps-for-Rails.git'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.0.2'
