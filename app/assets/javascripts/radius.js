@@ -217,4 +217,4 @@ function init() {
   setupDistanceWidget();
 }
 
-google.maps.event.addDomListener(window, 'page:load', init);
+google.maps.event.addDomListener(window, 'load', init);
