@@ -2,10 +2,12 @@
   =form_for @question do |f|
     =f.label :content, "What is your question?"
     =f.text_area :content
+    =f.label :radius, "Radius: "
     =f.text_area :radius
     =f.text_area :latitude
     =f.text_area :longitude
     =f.submit 'Ask'
+#slider-range-max
 
 #panel
   %input#address{:type => "textbox", :value => "Stanford, CA"}

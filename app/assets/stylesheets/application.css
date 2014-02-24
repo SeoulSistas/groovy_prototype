@@ -12,13 +12,14 @@
  *= require_tree .
  */
 
+#slider-range-max {
+    width: 200px;
+    margin-left:350px;
+}
+
 #map-canvas {
     height: 500px;
     width: 75%;
-}
-
-#question_radius {
-    display: none;
 }
 
 #question_latitude  {
