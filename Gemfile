@@ -1,11 +1,20 @@
 source 'https://rubygems.org'
 
 gem 'thin'
-gem 'pg'
 gem 'devise'
 gem 'haml'
 gem 'rails_12factor', group: :production
 
+group :development do
+  gem 'sqlite3'
+end
+
+gem 'railties'
+gem 'geokit'
+
+group :production do
+  gem 'pg'
+end
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.0.2'
 

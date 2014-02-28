@@ -5,6 +5,7 @@
 - else
   =link_to 'Sign In', new_session_path(:user)
   =link_to 'Sign Up', new_registration_path(:user)
+ 
   
 =link_to 'Ask a question', new_question_path, data: { no_turbolink: true }
 - if @questions.blank?
