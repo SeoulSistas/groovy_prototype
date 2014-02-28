@@ -1,12 +1,16 @@
+</br>
+</br>
 .question_form
   =form_for @question do |f|
     =f.label :content, "What is your question?"
+    </br>
     =f.text_area :content
-    =f.label :radius, "Radius: "
     =f.text_area :radius
     =f.text_area :latitude
     =f.text_area :longitude
+    </br>
     =f.submit 'Ask'
+
 #slider-range-max
 
 #panel
@@ -15,5 +19,6 @@
 
 
 #info
+</br>
 #map-canvas
 
