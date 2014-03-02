@@ -1,12 +1,23 @@
+</br>
+</br>
+%h1 Welcome To Groovy
 - if user_signed_in?
   Welcome,
   = current_user.email
+  </br>
+  </br>
   =link_to "Log out", destroy_user_session_path, :method => :delete
+  </br>
 - else
   =link_to 'Sign In', new_session_path(:user)
+  </br>
   =link_to 'Sign Up', new_registration_path(:user)
+<<<<<<< HEAD
  
   
+=======
+  </br>
+>>>>>>> c86fefe7f2dfe37ef412dd84c275b2040f1c5716
 =link_to 'Ask a question', new_question_path, data: { no_turbolink: true }
 - if @questions.blank?
   .message There is no question!
