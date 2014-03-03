@@ -3,6 +3,7 @@ source 'https://rubygems.org'
 gem 'thin'
 gem 'devise'
 gem 'haml'
+gem 'yard'
 gem 'rails_12factor', group: :production
 
 group :development do
