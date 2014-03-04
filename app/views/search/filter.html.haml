@@ -1,0 +1,34 @@
+- if user_signed_in?
+  Welcome,
+  = current_user.email
+  =link_to "Log out", destroy_user_session_path, :method => :delete
+- else
+  =link_to 'Sign In', new_session_path(:user)
+  =link_to 'Sign Up', new_registration_path(:user)
+  
+=link_to 'Ask a question', new_question_path, data: { no_turbolink: true }
+
+= form_tag filter_questions_path, :method => :get do
+  = field_set_tag do
+    = label_tag :lat, 'Latitude:'
+    = text_field_tag :lat
+    = label_tag :lng, 'Longitude:'
+    = text_field_tag :lng
+    = submit_tag 'Submit'
+
+- if not @filtered_questions.empty?
+  .questions
+    - for question in @filtered_questions
+      .question
+        .question_content=link_to question.content, question_path(question)
+        .question_user
+          Asked by
+          =question.user.email
+        .question_location
+          At
+          =question.location
+        .num_answers
+          =question.answers.count
+          Answers
+- else
+  .message No questions found.

@@ -11,7 +11,7 @@ group :development do
 end
 
 gem 'railties'
-gem 'geokit'
+gem 'geokit-rails'
 
 group :production do
   gem 'pg'
