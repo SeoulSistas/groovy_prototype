@@ -10,11 +10,21 @@ GroovyPrototype::Application.routes.draw do
   root 'home#index'
   
   resources :questions
-  resources :answers
-  
+  resources :answers do
+    post 'vote', on: :member
+  end
+
   resources :questions do
     resources :answers
   end
+  
+  resources :users do
+    resources :answers do
+      resources :votes
+    end
+  end
+  
+ 
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'

@@ -1,6 +1,6 @@
 class AnswersController < ApplicationController
 
-  before_filter :get_answer, only: [:edit, :update, :destroy]
+  before_filter :get_answer, only: [:edit, :update, :destroy, :vote]
   
   def create
     @answer = Answer.new(answer_params)
@@ -25,6 +25,18 @@ class AnswersController < ApplicationController
     question_id = @answer.question.id
     @answer.destroy!
     redirect_to question_path(question_id)
+  end
+  
+  def vote
+    vote = Vote.new
+    vote.type = params[:type]
+    vote.answer = @answer
+    vote.user = current_user
+    if vote.save
+      redirect_to question_path(@answer.question)
+    else
+      redirect_to question_path(@answer.question)
+    end
   end
   
   private
