@@ -9,11 +9,6 @@ class QuestionsController < ApplicationController
   def create
     @question = Question.new(question_params)
     @question.user = current_user
-    if @question.save
-      redirect_to root_path
-    else
-      render 'new'
-    end
 
     # Get current location information using request's IP address
     @question.ip_address = env['HTTP_X_REAL_IP'] ||= env['REMOTE_ADDR']
@@ -27,6 +22,16 @@ class QuestionsController < ApplicationController
         @question.is_asking_about_curr_loc = false
       end
     end
+
+    res = Geokit::Geocoders::GoogleGeocoder.reverse_geocode @question.latitude.to_s + "," + @question.longitude.to_s
+    @question.location = res.full_address
+        
+    if @question.save
+      redirect_to root_path
+    else
+      render 'new'
+    end
+
   end
      
   def update
