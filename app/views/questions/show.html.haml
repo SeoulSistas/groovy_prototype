@@ -28,3 +28,11 @@
           =answer.user.email
         =link_to 'Edit Answer', edit_answer_path(answer)
         =link_to 'Delete Answer', answer_path(answer), method: :delete, data: { confirm: 'Are you sure?' }
+        .votes
+          =answer.up_votes.count
+          Up Votes
+          =answer.down_votes.count
+          Down Votes
+          - unless current_user.voted?(answer)
+            =link_to 'Upvote', vote_answer_path(type: 'up'), method: :post
+            =link_to 'Downvote', vote_answer_path(type: 'down'), method: :post
