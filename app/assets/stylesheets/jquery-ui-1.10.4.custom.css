@@ -621,7 +621,7 @@ button.ui-button::-moz-focus-inner {
 	cursor: default;
 }
 .ui-slider .ui-slider-range {
-	position: absolute;
+	position: relative;
 	z-index: 1;
 	font-size: .7em;
 	display: block;

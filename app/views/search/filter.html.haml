@@ -14,7 +14,7 @@
     = text_field_tag :lat
     = label_tag :lng, 'Longitude:'
     = text_field_tag :lng
-    = submit_tag 'Submit'
+    = submit_tag 'Submit', class: "btn btn-large btn-primary"
 
 - if not @filtered_questions.empty?
   .questions

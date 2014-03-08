@@ -14,7 +14,8 @@
 .answer_form
   =form_for [@question, Answer.new] do |f|
     =f.text_area :content
-    =f.submit 'Answer'
+    </br>
+    =f.submit 'Answer', class: "btn btn-large btn-primary"
     
 - if @answers.blank?
   .message No one has answered this question yet
@@ -36,3 +37,5 @@
           - unless current_user.voted?(answer)
             =link_to 'Upvote', vote_answer_path(type: 'up'), method: :post
             =link_to 'Downvote', vote_answer_path(type: 'down'), method: :post
+
+=link_to_function "Back", "history.back()"

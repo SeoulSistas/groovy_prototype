@@ -1,21 +1,18 @@
-</br>
-</br>
-%h1 Welcome To Groovy
 - if user_signed_in?
-  Welcome,
-  = current_user.email
-  </br>
-  </br>
-  =link_to "Log out", destroy_user_session_path, :method => :delete
-  </br>
 - else
   =link_to 'Sign In', new_session_path(:user)
   </br>
-  =link_to 'Sign Up', new_registration_path(:user)
   </br>
+  %h1 Welcome To Groovy
+
+  .party
+  =image_tag("logo.png")
+  </br>
+
 =link_to 'Ask a question', new_question_path, data: { no_turbolink: true }
+%h2 Questions Near You
 - if @questions.blank?
-  .message There is no question!
+  .message There are no questions :(
 - else
   .questions
     - for question in @questions
@@ -30,4 +27,6 @@
         .num_answers
           =question.answers.count
           Answers
+          %hr
+
 

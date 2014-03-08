@@ -2,6 +2,5 @@
   =form_for @question do |f|
     =f.label :content, "What is your question?"
     =f.text_area :content
-    =f.label :location, "Where is your location?"
-    =f.text_field :location
-    =f.submit 'Edit'
+    </br>
+    =f.submit 'Edit', class: "btn btn-large btn-primary"
