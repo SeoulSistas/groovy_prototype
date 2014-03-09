@@ -22,6 +22,11 @@
     width: 75%;
 }
 
+#filter-map-canvas {
+    height: 300px; 
+    width: 25%; 
+}
+
 #question_latitude  {
     display: none;
 }

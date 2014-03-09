@@ -13,6 +13,7 @@ class SearchController < ApplicationController
         end
       end
     end
+    render :partial => 'filteredQuestions', :locals => {:filtered_questions => @filtered_questions}
   end
 
 end 
