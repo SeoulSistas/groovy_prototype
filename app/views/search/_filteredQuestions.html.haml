@@ -1,0 +1,16 @@
+- if not filtered_questions.empty?
+  .questions
+    - for question in filtered_questions
+      .question
+        .question_content=link_to question.content, question_path(question)
+        .question_user
+          Asked by
+          =question.user.email
+        .question_location
+          At
+          =question.location
+        .num_answers
+          =question.answers.count
+          Answers
+- else
+  .message No questions found in partial in search.
