@@ -12,7 +12,7 @@ function filterCodeAddress() {
     });
 }
 
-function init() {
+function initBoundingBox() {
    geocoder = new google.maps.Geocoder();
         var mapDiv = document.getElementById('filter-map-canvas');
     map = new google.maps.Map(mapDiv, {
@@ -33,4 +33,4 @@ function whenBoundsChange() {
       
 }
 
-google.maps.event.addDomListener(window, 'load', init);
+google.maps.event.addDomListener(window, 'load', initBoundingBox);
