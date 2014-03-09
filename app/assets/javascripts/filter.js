@@ -32,7 +32,6 @@ function whenBoundsChange() {
     jQuery.get(url, function(data) {
         document.getElementById('all_questions').innerHTML = data; 
     });
-
 }
 
 google.maps.event.addDomListener(window, 'load', initBoundingBox);
