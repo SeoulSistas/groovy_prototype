@@ -4,9 +4,10 @@
   </br>
   </br>
   %h1 Welcome To Groovy
-
-  .party
-  =image_tag("logo.png")
+  </br>
+  .row.text-center
+    =image_tag("logo.png")
+  </br>
   </br>
 
 =link_to 'Ask a question', new_question_path, data: { no_turbolink: true }
@@ -18,11 +19,8 @@
     - for question in @questions
       .question
         .question_content=link_to question.content, question_path(question)
-        .question_user
-          Asked by
-          =question.user.email
         .question_location
-          At
+          Near
           =question.location
         .num_answers
           =question.answers.count
