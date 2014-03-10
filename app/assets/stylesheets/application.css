@@ -14,11 +14,23 @@
 
 #slider-range-max {
     width: 200px;
+    margin-left:0px;
+    border: 1px solid #e78f08;
+    background: #f6a828
+}
+
+#slider-range-max .ui-slider-range {
+    background: white;
 }
 
 #map-canvas {
     height: 500px;
     width: 75%;
+}
+
+#filter-map-canvas {
+    height: 300px; 
+    width: 25%; 
 }
 
 #question_latitude  {
