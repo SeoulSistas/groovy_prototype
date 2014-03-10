@@ -21,7 +21,15 @@
 
 #slider-range-max .ui-slider-range {
     background: white;
+    margin-left:350px;
+    border: 1px solid #e78f08;
+    background: #f6a828
 }
+
+#slider-range-max .ui-slider-range {
+    background: white;
+}
+
 
 #map-canvas {
     height: 500px;
@@ -30,7 +38,7 @@
 
 #filter-map-canvas {
     height: 300px; 
-    width: 25%; 
+    width: 75%; 
 }
 
 #question_latitude  {
