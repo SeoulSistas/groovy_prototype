@@ -1,14 +1,23 @@
 class AnswersController < ApplicationController
 
   before_filter :get_answer, only: [:edit, :update, :destroy, :vote]
-  
+  before_action :authenticate_user_answer, only: :create 
+ 
   def create
-    @answer = Answer.new(answer_params)
-    @answer.question_id = params[:question_id]
-    @answer.user = current_user
-    if @answer.save
-      redirect_to question_path(params[:question_id])
+    if @can_answer == true 
+      @answer = Answer.new(answer_params)
+      @answer.question_id = params[:question_id]
+      @answer.user = current_user
+      puts "11111111111111111"
+      if @answer.save
+        puts "2222222222222"
+        flash[:success] = "Answered!"
+        redirect_to question_path(params[:question_id])
+      else
+        redirect_to question_path(params[:question_id])
+      end
     else
+      flash[:notice] = "You are not within the radius."
       redirect_to question_path(params[:question_id])
     end
   end
@@ -44,5 +53,4 @@ class AnswersController < ApplicationController
     def answer_params
       params.require(:answer).permit(:content)
     end
-  
 end

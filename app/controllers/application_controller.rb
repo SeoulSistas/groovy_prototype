@@ -12,5 +12,17 @@ class ApplicationController < ActionController::Base
   def get_answer
     @answer = Answer.find(params[:id])
   end
+
+  def authenticate_user_answer
+    question = Question.find(params[:question_id])
+    ip_address = env['HTTP_X_REAL_IP'] ||= env['REMOTE_ADDR'] 
+    curr_loc = Geokit::Geocoders::IpGeocoder.geocode(ip_address)
+    @can_answer = false
+    if curr_loc.success
+      if question.distance_to([curr_loc.lat, curr_loc.lng]) <= question.radius
+        @can_answer = true
+      end
+    end
+end
   
 end
