@@ -1,5 +1,3 @@
-</br>
-</br>
 .question_form
   =form_for @question do |f|
     =f.label :content, "What is your question?"
@@ -9,16 +7,19 @@
     =f.text_area :latitude
     =f.text_area :longitude
     </br>
-    =f.submit 'Ask'
-
-#slider-range-max
-
+    =f.submit 'Ask', class: "btn btn-large btn-primary"
+</br>
 #panel
-  %input#address{:type => "textbox", :value => "Stanford, CA"}
+  %input#address{:type => "textbox", :placeholder => "Stanford, CA"}
+
   %input{:type => "submit", :value => "Go!", :onclick => "codeAddress()"}
-
-
+    </br>
+    </br>
+    #slider-range-max
+    </br>
 #info
 </br>
 #map-canvas
+=link_to_function "Back", "history.back()"
+
 

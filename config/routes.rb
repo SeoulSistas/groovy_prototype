@@ -5,7 +5,7 @@ GroovyPrototype::Application.routes.draw do
     get "/sign_in", to: "users/sessions#new"
   end
 
-  get 'filter_questions', to: "search#filter"
+  get '/search', to: "home#search"
 
   root 'home#index'
   

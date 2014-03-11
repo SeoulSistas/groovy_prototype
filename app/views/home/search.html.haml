@@ -1,0 +1,23 @@
+- if user_signed_in?
+  Welcome,
+  = current_user.email
+  =link_to "Log out", destroy_user_session_path, :method => :delete
+- else
+  =link_to 'Sign In', new_session_path(:user)
+  =link_to 'Sign Up', new_registration_path(:user)
+  
+=link_to 'Ask a question', new_question_path, data: { no_turbolink: true }
+
+= form_tag search_path, :method => :get do
+  = field_set_tag do
+    = label_tag :s, 'South:'
+    = text_field_tag :s
+    = label_tag :w, 'West:'
+    = text_field_tag :w
+    = label_tag :n, 'North:'
+    = text_field_tag :n
+    = label_tag :e, 'East:'
+    = text_field_tag :e
+    = submit_tag 'Submit', class: "btn btn-large btn-primary"
+
+= render :partial => 'searched_questions', :locals => {:questions => @questions}

@@ -1,5 +1,6 @@
 .question
-  .question_content=@question.content
+  .question_content
+  .h3=@question.content
   .question_user
     Asked by
     =@question.user.email
@@ -10,15 +11,20 @@
 .question_links
   .edit_question_link= link_to 'Edit Question', edit_question_path(@question)
   .delete_question_link= link_to 'Delete Question', question_path(@question), method: :delete, data: { confirm: 'Are you sure?' }
-  
+
 .answer_form
+  %br 
   =form_for [@question, Answer.new] do |f|
     =f.text_area :content
+    %br
     =f.submit 'Answer'
+
     
 - if @answers.blank?
-  .message No one has answered this question yet
+  %br
+  .message Be the first to answer this question
 - else
+  %br
   .answers
     -for answer in @answers
       .answer
@@ -36,3 +42,6 @@
           - unless current_user.voted?(answer)
             =link_to 'Upvote', vote_answer_path(type: 'up'), method: :post
             =link_to 'Downvote', vote_answer_path(type: 'down'), method: :post
+
+%br
+=link_to_function "Back", "history.back()"
