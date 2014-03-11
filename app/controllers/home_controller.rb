@@ -16,7 +16,7 @@ class HomeController < ApplicationController
         end
       end
     end
-    render :partial => 'searched_question', :locals => {:questions => @questions}
+    render :partial => 'searched_questions', :locals => {:questions => @questions}
   end
 
 end

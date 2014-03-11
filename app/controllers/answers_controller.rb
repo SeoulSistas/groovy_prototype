@@ -4,6 +4,8 @@ class AnswersController < ApplicationController
   before_action :authenticate_user_answer, only: :create 
  
   def create
+    #For now
+    @can_answer = true
     if @can_answer == true 
       @answer = Answer.new(answer_params)
       @answer.question_id = params[:question_id]
