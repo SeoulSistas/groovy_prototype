@@ -10,15 +10,19 @@
 
 = form_tag filter_questions_path, :method => :get do
   = field_set_tag do
-    = label_tag :lat, 'Latitude:'
-    = text_field_tag :lat
-    = label_tag :lng, 'Longitude:'
-    = text_field_tag :lng
+    = label_tag :pt_s, 'South:'
+    = text_field_tag :pt_s
+    = label_tag :pt_w, 'West:'
+    = text_field_tag :pt_w
+    = label_tag :pt_n, 'North:'
+    = text_field_tag :pt_n
+    = label_tag :pt_e, 'East:'
+    = text_field_tag :pt_e
     = submit_tag 'Submit'
 
-- if not @filtered_questions.empty?
+- if not @questions.empty?
   .questions
-    - for question in @filtered_questions
+    - for question in @questions
       .question
         .question_content=link_to question.content, question_path(question)
         .question_user
