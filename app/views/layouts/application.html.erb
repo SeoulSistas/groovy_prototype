@@ -3,8 +3,22 @@
 <head>
   <title>GroovyPrototype</title>
   <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC4WCykK27pFFElrwy72AvUDWS812e0DKk&sensor=true"/>
-<%= stylesheet_link_tag "http://ajax.googleapis.com/ajax/libs/jqueryui/1.7.2/themes/redmond/jquery-ui.css", "application" %>
+
+<!-- <%= stylesheet_link_tag "http://ajax.googleapis.com/ajax/libs/jqueryui/1.7.2/themes/redmond/jquery-ui.css", "application" %> -->
 <%= javascript_include_tag "http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js", "http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.1/jquery-ui.min.js"%>
+
+
+ <% stylesheet_link_tag
+ "https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.10.3/css/base/jquery.ui.all.css" %>
+<% stylesheet_link_tag
+ "https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.10.2/css/lightness/jquery-ui-1.10.2.custom.min.css" %>
+<% javascript_include_tag
+ "https://cdnjs.cloudflare.com/ajax/libs/jquery/1.11.0/jquery.min.js" %>
+<% javascript_include_tag
+ "https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.10.3/jquery-ui.min.js" %>
+<% javascript_include_tag
+ "https://cdnjs.cloudflare.com/ajax/libs/jqueryui-touch-punch/0.2.2/jquery.ui.touch-punch.min.js" %>
+
 
   <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
   <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
