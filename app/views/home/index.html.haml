@@ -10,7 +10,8 @@
   </br>
   </br>
 
-=link_to 'Ask a question', new_question_path, data: { no_turbolink: true }
+.question_new
+  =link_to 'Ask a question', new_question_path, data: { no_turbolink: true }
 %h2 Questions Near You
 - if @questions.blank?
   .message There are no questions :(
