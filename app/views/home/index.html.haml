@@ -15,11 +15,11 @@
 - if @questions.blank?
   .message There are no questions :(
 - else
-  .questions
+  .homequestions
     - for question in @questions
-      .question
-        .question_content=link_to question.content, question_path(question)
-        .question_location
+      .hquestion
+        .homequestion_content=link_to question.content, question_path(question)
+        .homequestion_location
           Near
           =question.location
         .num_answers
@@ -34,5 +34,3 @@
 
 %br
 #filter-map-canvas
-
-#all_questions

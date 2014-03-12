@@ -1,12 +1,14 @@
 .question
   .question_content
-  .h3=@question.content
-  .question_user
-    Asked by
-    =@question.user.email
-  .question_location
-    At
-    =@question.location
+  =@question.content
+
+.question_user
+  Asked by
+  =@question.user.email
+
+.question_location
+  At
+  =@question.location
   
 .question_links
   .edit_question_link= link_to 'Edit Question', edit_question_path(@question)
@@ -28,19 +30,25 @@
   .answers
     -for answer in @answers
       .answer
-        =answer.content
+        .atext
+          =answer.content
         .answer_user
           Answered by
           =answer.user.email
-        =link_to 'Edit Answer', edit_answer_path(answer)
-        =link_to 'Delete Answer', answer_path(answer), method: :delete, data: { confirm: 'Are you sure?' }
+        .aedit
+          =link_to 'Edit Answer', edit_answer_path(answer)
+          %br
+          =link_to 'Delete Answer', answer_path(answer), method: :delete, data: { confirm: 'Are you sure?' }
+          %br
         .votes
-          =answer.up_votes.count
-          0 Up Votes
-          =answer.down_votes.count
-          0 Down Votes
+          %br
+          %h2
+            =answer.up_votes.count
+            =link_to 'Like', vote_answer_path(type: 'up'), method: :post
+            %br
           - unless current_user.voted?(answer)
-            =link_to 'Upvote', vote_answer_path(type: 'up'), method: :post
-            =link_to 'Downvote', vote_answer_path(type: 'down'), method: :post
+            %br    
+            %br
+            %hr
 %br
 =link_to_function "Back", "history.back()"
