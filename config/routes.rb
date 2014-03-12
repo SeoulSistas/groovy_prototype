@@ -18,14 +18,6 @@ GroovyPrototype::Application.routes.draw do
     resources :answers
   end
   
-  resources :users do
-    resources :answers do
-      resources :votes
-    end
-  end
-  
- 
-
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 

@@ -42,7 +42,7 @@
           %br
           %h2
             =answer.up_votes.count
-            =link_to 'Like', vote_answer_path(type: 'up'), method: :post
+            =link_to 'Like', vote_answer_path(answer, type: 'up'), method: :post
             %br
           - unless current_user.voted?(answer)
             %br    
