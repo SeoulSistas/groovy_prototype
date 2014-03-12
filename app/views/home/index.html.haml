@@ -13,9 +13,9 @@
 .question_new
   =link_to 'Ask a question', new_question_path, data: { no_turbolink: true }
 %h2 Questions Near You
-- if @questions.blank?
+-#- if @questions.blank?
   .message There are no questions :(
-- else
+  - else
   .homequestions
     - for question in @questions
       .hquestion
