@@ -23,16 +23,16 @@ function initBoundingBox() {
         });
         google.maps.event.addDomListener(map, 'bounds_changed', whenBoundsChange);
     }
-
 }
 
 function whenBoundsChange() {
-    var center = map.getCenter();
-    var url = "filter_questions?lat=" + encodeURIComponent(center.lat()) + "&lng=" + encodeURIComponent(center.lng());
+    var bounds = map.getBounds();
+    var ne = bounds.getNorthEast();
+    var sw = bounds.getSouthWest();
+    var url = "search?n=" + encodeURIComponent(ne.lat()) + "&e=" + encodeURIComponent(ne.lng()) + "&s=" + encodeURIComponent(sw.lat()) + "&w=" + encodeURIComponent(sw.lng());
     jQuery.get(url, function(data) {
         document.getElementById('all_questions').innerHTML = data; 
     });
-
 }
 
 google.maps.event.addDomListener(window, 'load', initBoundingBox);
