@@ -31,6 +31,11 @@ function updateCoordsOnPage(pos) {
     lng.innerHTML = Math.round(pos.lng() * 10) / 10;
 }
 
+function handleClick(event) {
+    cityMarker.setPosition(event.latLng); 
+    updateCoordsOnPage(event.latLng); 
+}
+
 function init() {
     geocoder = new google.maps.Geocoder();
     var mapDiv = document.getElementById('map-canvas');
@@ -43,7 +48,7 @@ function init() {
         cityMarker = new google.maps.Marker({
             position: map.getCenter(), 
             map: map,
-            draggable: true, 
+           // draggable: true, 
             visible: true});
         cityCircle = new google.maps.Circle({
             strokeOpacity: 0.8,
@@ -56,7 +61,8 @@ function init() {
         });
         cityCircle.bindTo('center', cityMarker, 'position');
         updateCoordsOnPage(map.getCenter());
-        google.maps.event.addListener(cityMarker, 'drag', function() { updateCoordsOnPage(cityMarker.getPosition()); } );
+        google.maps.event.addListener(map, 'click', handleClick);
+        //google.maps.event.addListener(cityMarker, 'drag', function() { updateCoordsOnPage(cityMarker.getPosition()); } );
     }
 }
 
