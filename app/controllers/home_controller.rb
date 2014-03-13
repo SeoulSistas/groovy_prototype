@@ -16,6 +16,7 @@ class HomeController < ApplicationController
         end
       end
     end
+    @questions.sort! {|a,b| b.created_at <=> a.created_at}
     render :partial => 'searched_questions', :locals => {:questions => @questions}
   end
 
