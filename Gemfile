@@ -1,7 +1,5 @@
 source 'https://rubygems.org'
 
-gem 'touchpunch-rails'
-
 gem 'thin'
 gem 'devise'
 gem 'haml'
