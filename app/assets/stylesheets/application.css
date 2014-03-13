@@ -12,6 +12,10 @@
  *= require_tree .
  */
 
+.change_location {
+    font-size: 2em; 
+}
+
 #slider-range-max {
     width: 200px;
     margin-left:0px;
