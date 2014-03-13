@@ -7,7 +7,7 @@
     =f.label :radius, "Select radius: "
     =f.select(:radius, options_for_select([['5', 5], ['10', 10],['15', 15], ['20', 20], ['25', 25]]), {}, {:onChange => "handleChangedRadius()"})
     <br>
-    =f.submit 'Ask', class: "btn btn-large btn-primary"
+    =f.submit 'Ask', class: "btn btn-large btn-primary", id: "ask_button"
     =f.text_area :latitude
     =f.text_area :longitude
     </br>
