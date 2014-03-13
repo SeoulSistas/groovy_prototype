@@ -64,22 +64,27 @@ function milesToMeters(miles) {
     return miles * 1609.3;
 }
 
-$(function() {
-    $( "#slider-range-max" ).slider({
-        range: "max",
-        min: 1,
-        max: 20,
-        value: startValue,
-        slide: function( event, ui ) {
-            $( "#question_radius" ).val( ui.value );
-            updateRadius(ui.value);
-        }
-    });
-    $( "#question_radius" ).val( $( "#slider-range-max" ).slider( "value" ) );
-});
+// $(function() {
+//     $( "#slider-range-max" ).slider({
+//         range: "max",
+//         min: 1,
+//         max: 20,
+//         value: startValue,
+//         slide: function( event, ui ) {
+//             $( "#question_radius" ).val( ui.value );
+//             updateRadius(ui.value);
+//         }
+//     });
+//     $( "#question_radius" ).val( $( "#slider-range-max" ).slider( "value" ) );
+// });
 
 function updateRadius(rad) {
     cityCircle.setRadius(milesToMeters(rad));
 }
 
 google.maps.event.addDomListener(window, 'load', init);
+
+function handleChangedRadius() {
+   var select = document.getElementById('question_radius');
+   updateRadius(select.value);
+}

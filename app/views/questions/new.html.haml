@@ -3,11 +3,14 @@
     =f.label :content, "What is your question?"
     </br>
     =f.text_area :content
-    =f.text_area :radius
+    <br>
+    =f.label :radius, "Select radius: "
+    =f.select(:radius, options_for_select([['5', 5], ['10', 10],['15', 15], ['20', 20], ['25', 25]]), {}, {:onChange => "handleChangedRadius()"})
+    <br>
+    =f.submit 'Ask', class: "btn btn-large btn-primary"
     =f.text_area :latitude
     =f.text_area :longitude
     </br>
-    =f.submit 'Ask', class: "btn btn-large btn-primary"
 </br>
 #panel
   %input#address{:type => "textbox", :placeholder => "Stanford, CA"}
@@ -15,7 +18,7 @@
   %input{:type => "submit", :value => "Go!", :onclick => "codeAddress()"}
     </br>
     </br>
-    #slider-range-max
+    <!-- #slider-range-max -->
     </br>
 #info
 </br>
