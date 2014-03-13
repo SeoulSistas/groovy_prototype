@@ -13,6 +13,9 @@
 //= require jquery
 //= require jquery_ujs
 //= require turbolinks
+//= require jquery.ui.mouse.js
+//= require jquery.ui.widget.js
+//= require jquery.ui.touch-punch.min.js
 //= require filter
 //= require radius
 //= require_tree .
