@@ -10,19 +10,6 @@ class QuestionsController < ApplicationController
     @question = Question.new(question_params)
     @question.user = current_user
 
-    # Get current location information using request's IP address
-    @question.ip_address = env['HTTP_X_REAL_IP'] ||= env['REMOTE_ADDR']
-    loc = Geokit::Geocoders::IpGeocoder.geocode(@question.ip_address)
-    if loc.success
-      @question.curr_lat = loc.lat
-      @question.curr_lng = loc.lng
-      if @question.distance_to([loc.lat, loc.lng]) <= @question.radius
-        @question.is_asking_about_curr_loc = true
-      else
-        @question.is_asking_about_curr_loc = false
-      end
-    end
-
     res = Geokit::Geocoders::GoogleGeocoder.reverse_geocode @question.latitude.to_s + "," + @question.longitude.to_s
     @question.location = res.full_address
         
