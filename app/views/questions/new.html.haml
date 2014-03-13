@@ -7,23 +7,25 @@
     =f.label :radius, "Select radius: "
     =f.select(:radius, options_for_select([['5', 5], ['10', 10],['15', 15], ['20', 20], ['25', 25]]), {}, {:onChange => "handleChangedRadius()"})
     <br>
-    =f.submit 'Ask', class: "btn btn-large btn-primary", id: "ask_button"
-    =f.text_area :latitude
-    =f.text_area :longitude
-    </br>
-</br>
-#panel
-  %input#address{:type => "textbox", :placeholder => "Stanford, CA"}
+    #panel
+    %input#address{:type => "textbox", :placeholder => "Stanford, CA"}
 
-  %input.change_location{:type => "submit", :value => "Change Location!", :onclick => "codeAddress()"}
+    %input.change_location{:type => "submit", :value => "Change Location!", :onclick => "codeAddress()"}
 
     </br>
     </br>
     <!-- #slider-range-max -->
     </br>
-#info
+    #info
+    </br>
+    #map-canvas
+    %br
+    =f.submit 'Ask', class: "btn btn-large btn-primary", id: "ask_button"
+    =f.text_area :latitude
+    =f.text_area :longitude
+    </br>
 </br>
-#map-canvas
+
 =link_to_function "Back", "history.back()"
 
 
