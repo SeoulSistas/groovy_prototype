@@ -12,7 +12,7 @@ class QuestionsController < ApplicationController
 
     res = Geokit::Geocoders::GoogleGeocoder.reverse_geocode @question.latitude.to_s + "," + @question.longitude.to_s
     @question.location = res.full_address
-        
+    @question.is_alive = true
     if @question.save
       redirect_to root_path
     else
@@ -41,6 +41,6 @@ class QuestionsController < ApplicationController
   private
       
     def question_params
-      params.require(:question).permit(:content, :radius, :longitude, :latitude)
+      params.require(:question).permit(:content, :radius, :longitude, :latitude, :ttl)
     end
 end

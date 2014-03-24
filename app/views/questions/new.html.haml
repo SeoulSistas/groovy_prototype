@@ -7,6 +7,9 @@
     =f.label :radius, "Select radius: "
     =f.select(:radius, options_for_select([['5', 5], ['10', 10],['15', 15], ['20', 20], ['25', 25]]), {}, {:onChange => "handleChangedRadius()"})
     <br>
+    =f.label :ttl, "Select TTL (time to live): "
+    =f.select(:ttl, options_for_select([['3 minutes', 3], ['10 mins', 10], ['30 mins', 30], ['1 hr', 60], ['1 day', 60*24], ['1 week', 60*24*7]]))
+    <br>
     =f.submit 'Ask', class: "btn btn-large btn-primary", id: "ask_button"
     =f.text_area :latitude
     =f.text_area :longitude
