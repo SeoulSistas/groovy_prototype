@@ -1,9 +1,9 @@
 GroovyPrototype::Application.routes.draw do
-  devise_for :users 
+  devise_for :users, controllers: { registrations: "users/registrations", :sessions => "users/sessions" }
   
   devise_scope :user do
-    get "sign_in", to: "devise/sessions#new"
-    get "sign_up", to: "devise/registrations#new"
+    get "sign_in", to: "users/sessions#new"
+    get "sign_up", to: "users/registrations#new"
   end
 
   get '/search', to: "home#search"

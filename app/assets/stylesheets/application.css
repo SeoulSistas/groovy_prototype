@@ -12,6 +12,13 @@
  *= require_tree .
  */
 
+#title {
+  background-image: url('title.png');
+  width: 250px;
+  height: 47px;
+  margin: 0px auto;
+}
+
 .ui-page, .ui-body-c, .ui-page-active, .ui-overlay-c, .ui-mobile-viewport
 {
     background: transparent !important;

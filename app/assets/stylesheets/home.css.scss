@@ -1,22 +1,24 @@
 // Place all the styles related to the home controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
-#title {
-  background-image: url('title.png');
-  width: 250px;
-  height: 47px;
-  margin: 30px auto;
+#welcome_wrapper {
+  position: absolute;
+  margin: -195px 0 0 -150px;
+  left: 50%;
+  top: 50%;
+  width: 300px;
+  height: 390px;
 }
 
 #logo {
   background-image: url('logo.png');
   width: 300px;
   height: 273px;
-  margin: 30px auto;
+  margin: 0px auto;
 }
 
 #btn_cntr {
   width: 250px;
   padding-left: 20px;
-  margin: 30px auto;
+  margin: 9px auto;
 }
