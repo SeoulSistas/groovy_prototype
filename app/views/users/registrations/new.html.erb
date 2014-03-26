@@ -1,19 +1,13 @@
-<h2>Sign up</h2>
+<div id='title'></div>
 
-<%= form_for(resource, :as => resource_name, :url => registration_path(resource_name)) do |f| %>
-  <%= devise_error_messages! %>
+<div id='new_user_form_cntr'>
+  <%= form_for(resource, :as => resource_name, :url => registration_path(resource_name)) do |f| %>
+    <%= f.email_field :email, placeholder:'Email' %>
+    <%= f.password_field :password, placeholder: 'Password' %>
+    <%= f.password_field :password_confirmation, placeholder: 'Confirm Password' %>
+    <div><%= f.submit "Sign up", class: "btn btn-large btn-primary"%></div>
+  <% end %>
+</div>
 
-  <div><%= f.label :email %><br />
-  <%= f.email_field :email, :autofocus => true %></div>
+<a href='/sign_in' data-role="button" class='btn'>Already registered?</a>
 
-  <div><%= f.label :password %><br />
-  <%= f.password_field :password %></div>
-
-  <div><%= f.label :password_confirmation %><br />
-  <%= f.password_field :password_confirmation %></div>
-
-</br>
-  <div><%= f.submit "Sign up", class: "btn btn-large btn-primary"%></div>
-<% end %>
-
-<%= render "devise/shared/links" %>
