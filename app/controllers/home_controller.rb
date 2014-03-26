@@ -3,7 +3,15 @@ class HomeController < ApplicationController
   skip_before_filter :authenticate_user!
   
   def index
-    @questions = Question.all
+    if user_signed_in?
+      @questions = Question.all
+    else 
+      redirect_to welcome_path
+    end
+  end
+  
+  def welcome
+    
   end
 
   def search

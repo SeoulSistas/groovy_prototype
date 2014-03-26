@@ -3,27 +3,18 @@
 <head>
   <title>GroovyPrototype</title>
   <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC4WCykK27pFFElrwy72AvUDWS812e0DKk&sensor=true"/>
-<%= stylesheet_link_tag "http://ajax.googleapis.com/ajax/libs/jqueryui/1.7.2/themes/redmond/jquery-ui.css", "application" %>
-<%= javascript_include_tag "http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js", "http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.1/jquery-ui.min.js"%>
-
+  <%= stylesheet_link_tag "http://ajax.googleapis.com/ajax/libs/jqueryui/1.7.2/themes/redmond/jquery-ui.css", "application" %>
+  <%= javascript_include_tag "http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js", "http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.1/jquery-ui.min.js"%>
+  <%= stylesheet_link_tag "http://ajax.googleapis.com/ajax/libs/jquerymobile/1.4.2/jquery.mobile.min.css" %>
+  <%= javascript_include_tag "http://ajax.googleapis.com/ajax/libs/jquerymobile/1.4.2/jquery.mobile.min.js" %>
   <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
   <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
   <%= csrf_meta_tags %>
 </head>
 <body>
-    <%= render 'layouts/header' %>
-    <% if flash[:notice] != nil %>
-      <%= flash[:notice] %>
-    <% end %>
-    <% if flash[:success] != nil %>
-      <%= flash[:success] %>
-    <% end %>
-    <% if flash[:error] != nil %>
-      <%= flash[:error] %>
-    <% end %> 
-    <div class="container">
-      <%= yield %>
-    <%= render 'layouts/footer' %>
-    </div>
+  <div data-role="page">
+    <%= yield %>
+  </div>
+  </div>
 </body>
 </html>
