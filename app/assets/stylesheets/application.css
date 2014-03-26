@@ -11,12 +11,25 @@
  *= require_self
  *= require_tree .
  */
+#new_user .ui-input-text { 
+  margin: 5px;
+  padding: 10px;
+  font-size: 16px;
+}
+
+#new_user_form_cntr {
+  margin: 50px auto;
+}
+
+#new_user .ui-btn {
+  margin: 0 auto;
+}
 
 #title {
   background-image: url('title.png');
   width: 250px;
   height: 47px;
-  margin: 0px auto;
+  margin: 30px auto;
 }
 
 .ui-page, .ui-body-c, .ui-page-active, .ui-overlay-c, .ui-mobile-viewport
