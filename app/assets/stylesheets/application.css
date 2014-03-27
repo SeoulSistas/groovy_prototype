@@ -35,8 +35,8 @@
   float:right;
 } 
 
-.question_content {
-  font-size: 25px;
+.question_content a {
+  font-size: 20px;
   color: #333333;
 } 
 

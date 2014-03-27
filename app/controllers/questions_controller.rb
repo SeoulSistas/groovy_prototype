@@ -13,7 +13,7 @@ class QuestionsController < ApplicationController
     @question.location = 'South Korea'
     @question.is_alive = true
     @question.save
-    redirect_to @question
+    redirect_to root_path
   end
      
   def update
