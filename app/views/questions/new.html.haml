@@ -1,20 +1,32 @@
+#new_question_title
+  %h2
+    New Question
+
+%br
+
+#map-canvas
+
+#panel
+  %input#address{:type => "textbox", :placeholder => "Stanford, CA"}
+  %input.change_location{:type => "submit", :value => "Change Location!", :onclick => "codeAddress()"}
+
+%br
 .question_form
   =form_for @question do |f|
-    =f.label :content, "What is your question?"
-    =f.text_area :content
-    =f.label :radius, "Select radius: "
+    =f.label :radius, "Select radius: ", {:id => "radius_label"}
     =f.select(:radius, options_for_select([['5', 5], ['10', 10],['15', 15], ['20', 20], ['25', 25]]), {}, {:onChange => "handleChangedRadius()"})
-    =f.label :ttl, "Select TTL (time to live): "
+    =f.label :content, "What is your question?", {:id => "content_label"}
+    =f.text_area :content
+    =f.label :ttl, "Select TTL (time to live): ", {:id => "ttl_label"}
     =f.select(:ttl, options_for_select([['3 minutes', 3], ['10 mins', 10], ['30 mins', 30], ['1 hr', 60], ['1 day', 60*24], ['1 week', 60*24*7]]))
     =f.submit 'Ask', class: "btn btn-large btn-primary", id: "ask_button"
     =f.text_area :latitude
     =f.text_area :longitude
-#panel
-  %input#address{:type => "textbox", :placeholder => "Stanford, CA"}
-  %input.change_location{:type => "submit", :value => "Change Location!", :onclick => "codeAddress()"}
-    <!-- #slider-range-max -->
+
 #info
-#map-canvas
+
 =link_to_function "Back", "history.back()"
 
-
+<!-- #question_radius_slider_div -->
+<!--   %label{:for => "radius_slider"}Input slider: -->
+<!--   %input#question_radius_slider{:type => "range", :name => "radius_slider", :value => "5", :min => "1", :max => "50"} -->

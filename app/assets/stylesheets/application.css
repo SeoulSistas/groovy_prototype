@@ -105,3 +105,11 @@ body, .ui-overlay-c
     display: none;
 }
 
+label {
+    color: #808080; 
+}
+
+#content_label, #radius_label, #ttl_label{
+   font-weight: bold; 
+}
+
