@@ -11,7 +11,30 @@
  *= require_self
  *= require_tree .
  */
-  
+ 
+ .message { 
+   text-align: center;
+ }
+ 
+.question_cntr { 
+  min-height: 70px;
+  margin-top: 20px;
+  border-bottom: 1px solid #85888D;
+}
+
+.left {
+  float:left;
+}
+
+.ttl { 
+  font-size: 16px;
+  color: #eb21ae;
+}
+
+.right { 
+  float:right;
+} 
+
 .question_content {
   font-size: 25px;
   color: #333333;
