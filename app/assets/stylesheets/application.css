@@ -35,7 +35,7 @@
   float:right;
 } 
 
-.question_content {
+.question_content a {
   font-size: 25px;
   color: #333333;
 } 
