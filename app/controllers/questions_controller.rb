@@ -10,14 +10,10 @@ class QuestionsController < ApplicationController
     @question = Question.new(question_params)
     @question.user = current_user
 
-    res = Geokit::Geocoders::GoogleGeocoder.reverse_geocode @question.latitude.to_s + "," + @question.longitude.to_s
-    @question.location = res.full_address
+    @question.location = 'South Korea'
     @question.is_alive = true
-    if @question.save
-      redirect_to root_path
-    else
-      render 'new'
-    end
+    @question.save
+    redirect_to @question
 
   end
      
