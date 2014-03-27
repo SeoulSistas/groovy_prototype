@@ -2,5 +2,10 @@
   =image_tag 'title.png'
   =link_to 'Ask', new_question_path, 'data-no-turbolink' => true, class: 'ui-btn-right', data: { role: "button", icon: "plus", iconpos: "left" } 
 #filter-map-canvas
+
+#panel
+  %input#address{:type => "textbox", :placeholder => "Suwon, South Korea"}
+  %input.change_location{:type => "submit", :value => "Change Location!", :onclick => "codeAddress()"}
+
 #all_questions
 
