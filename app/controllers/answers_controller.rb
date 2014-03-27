@@ -38,7 +38,7 @@ class AnswersController < ApplicationController
   
   def vote
     vote = Vote.new
-    vote.type = params[:type]
+    vote.typpe = params[:typpe]
     vote.answer = @answer
     vote.user = current_user
     if vote.save

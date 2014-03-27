@@ -1,7 +1,7 @@
 class CreateVotes < ActiveRecord::Migration
   def change
     create_table :votes do |t|
-      t.string :type, null: false, default: 'up'
+      t.string :typpe, null: false, default: 'upp'
       t.references :answer
       t.references :user
       t.timestamps
