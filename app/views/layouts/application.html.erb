@@ -18,7 +18,7 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-  <div data-role="page">
+  <div data-role="page" data-url="<%= request.path %>">
     <%= yield %>
   </div>
 </body>
