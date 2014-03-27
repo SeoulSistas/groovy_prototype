@@ -7,7 +7,7 @@ GroovyPrototype::Application.routes.draw do
   end
 
   get '/search', to: "home#search"
-  get '/welcome', to: "home#welcome"
+  get 'welcome', to: "home#welcome"
 
   root 'home#index'
   

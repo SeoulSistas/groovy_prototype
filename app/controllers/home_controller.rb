@@ -1,13 +1,13 @@
 class HomeController < ApplicationController
 
-  skip_before_filter :authenticate_user!, only: [:index]
+  skip_before_filter :authenticate_user!
   
   def index
     if !user_signed_in?
       redirect_to welcome_path
     end
   end
-    
+      
   def search
    questions_at_location = []
     live_questions = Question.where(is_alive: true)

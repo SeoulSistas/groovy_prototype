@@ -1,6 +1,6 @@
 #header{ data: { role: "header" } }
   =image_tag 'title.png'
-  =link_to 'Ask', new_question_path, class: 'ui-btn-right', data: { role: "button", icon: "plus", iconpos: "left" } 
+  =link_to 'Ask', new_question_path, 'data-no-turbolink' => true, class: 'ui-btn-right', data: { role: "button", icon: "plus", iconpos: "left" } 
 #filter-map-canvas
 #all_questions
 
