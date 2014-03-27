@@ -52,7 +52,7 @@
   margin: 30px auto;
 }
 
-#all_questions {
+#all_questions, .answers {
   width: 75%;
   margin: 0 auto;
 }
@@ -143,6 +143,25 @@ label {
    font-weight: bold; 
 }
 
+#answer_question_label {
+   font-weight: bold; 
+   text-align: center;
+}
+
 #panel, #new_question_title {
     text-align: center; 
+}
+
+.question_links {
+    font-size: 0.5em;
+    text-align: center; 
+}
+
+.edit_delete_answer {
+    font-size: 0.3em; 
+}
+
+#back_home_nav {
+    margin: 0 auto; 
+    width: 75%; 
 }

@@ -1,3 +1,5 @@
+#title
+
 .question_show
   .question_content
   =@question.content
@@ -5,19 +7,19 @@
 .question_user
   Asked by
   =@question.user.email
-  at
-  =@question.location
   
 .question_links
-  .edit_question_link= link_to 'Edit Question', edit_question_path(@question)
-  .delete_question_link= link_to 'Delete Question', question_path(@question), method: :delete, data: { confirm: 'Are you sure?' }
+  =link_to 'Edit', edit_question_path(@question)
+  &nbsp; 
+  =link_to 'Delete', question_path(@question), method: :delete, data: { confirm: 'Are you sure?' }
 
 .answer_form
   %br 
   =form_for [@question, Answer.new] do |f|
+    =f.label :content, 'Answer', {:id => "answer_question_label"}
     =f.text_area :content
     %br
-    =f.submit 'Answer'
+    =f.submit 'Submit'
 
     
 - if @answers.blank?
@@ -28,30 +30,27 @@
   .answers
     -for answer in @answers
       .answer
+        %br
+        .answer_user
+          =answer.user.email
         .atext
           =answer.content
-        .answer_user
-          Answered by
-          =answer.user.email
-        .aedit
-          =link_to 'Edit Answer', edit_answer_path(answer)
-          %br
-          =link_to 'Delete Answer', answer_path(answer), method: :delete, data: { confirm: 'Are you sure?' }
+        .edit_delete_answer
+          =link_to 'Like', vote_answer_path(answer, type: 'up'), method: :post
+          &nbsp; 
+          =link_to 'Edit', edit_answer_path(answer)
+          &nbsp;   
+          =link_to 'Delete', answer_path(answer), method: :delete, data: { confirm: 'Are you sure?' }
           %br
         .votes
           %br
-          %h2
-            =answer.up_votes.count
-            =link_to 'Like', vote_answer_path(answer, typpe: 'upp'), method: :post
-            %br
-          - unless current_user.voted?(answer)
-            %br    
-            %br
-            %hr
+          =answer.up_votes.count
+          likes
+          %br
 %br
-<div>
+<div id="back_home_nav">
 =link_to_function "Back", "history.back()"
-</div>
-<div>
+&nbsp;
+&nbsp; 
 =link_to "Home", root_path
 </div>

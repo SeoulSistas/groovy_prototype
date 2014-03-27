@@ -14,7 +14,6 @@ class QuestionsController < ApplicationController
     @question.is_alive = true
     @question.save
     redirect_to root_path
-
   end
      
   def update
