@@ -11,6 +11,11 @@
  *= require_self
  *= require_tree .
  */
+  
+.question_content {
+  font-size: 25px;
+  color: #333333; !important
+} 
 
 #header {
   height: 50px;

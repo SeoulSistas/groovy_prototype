@@ -1,16 +1,13 @@
 - if not questions.empty?
   .questions
     - for question in questions
-      .question
-        .question_content=link_to question.content, question_path(question)
-        .question_user
-          Asked by
-          =question.user.email
-        .question_location
-          At
-          =question.location
-        .num_answers
-          =question.answers.count
-          Answers
+      .question_cntr
+        .question.left
+          .question_content= question.content
+          .num_answers
+            =question.answers.count
+            Answers
+        .question.right
+          .question_ttl= question.display_ttl
 - else
   .message No questions found 
