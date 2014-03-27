@@ -68,21 +68,14 @@ function init() {
 
 function milesToMeters(miles) {
     return miles * 1609.3;
-}
+} 
 
-// $(function() {
-//     $( "#slider-range-max" ).slider({
-//         range: "max",
-//         min: 1,
-//         max: 20,
-//         value: startValue,
-//         slide: function( event, ui ) {
-//             $( "#question_radius" ).val( ui.value );
-//             updateRadius(ui.value);
-//         }
-//     });
-//     $( "#question_radius" ).val( $( "#slider-range-max" ).slider( "value" ) );
-// });
+// $(document).ready(function() {
+//     $('#question_radius_slider').on('slidestop', function() {
+//         console.log('value changed'); 
+//     }); 
+// }); 
+
 
 function updateRadius(rad) {
     cityCircle.setRadius(milesToMeters(rad));
