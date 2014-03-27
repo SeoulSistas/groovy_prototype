@@ -1,25 +1,18 @@
 class HomeController < ApplicationController
 
-  skip_before_filter :authenticate_user!
+  skip_before_filter :authenticate_user!, only: [:index]
   
   def index
-    if user_signed_in?
-      @questions = Question.all
-    else 
+    if !user_signed_in?
       redirect_to welcome_path
     end
   end
-  
-  def welcome
     
-  end
-
   def search
-   questions_at_location = Array.new
-    all_questions = Question.where(is_alive: true)
-    if params[:n]!=nil and params[:s]!=nil and params[:e]!=nil and params[:w]!=nil
-      for question in all_questions
-        puts question.created_at
+   questions_at_location = []
+    live_questions = Question.where(is_alive: true)
+    if params[:n]!=nil && params[:s]!=nil && params[:e]!=nil && params[:w]!=nil
+      for question in live_questions
         if question.latitude.between?(params[:s].to_f,params[:n].to_f) and question.longitude.between?(params[:w].to_f, params[:e].to_f)
           questions_at_location.push(question)
         end
@@ -46,7 +39,7 @@ class HomeController < ApplicationController
         question.save
       end
     end
-    return live_questions
+    live_questions
   end
 
 end

@@ -17,7 +17,7 @@ function initBoundingBox() {
     var mapDiv = document.getElementById('filter-map-canvas');
     if (mapDiv != null) {
         map = new google.maps.Map(mapDiv, {
-            center: new google.maps.LatLng(37.424105999999, -122.1660756),
+            center: new google.maps.LatLng(37.254687, 127.049153),
             zoom: 10, 
             mapTypeId: google.maps.MapTypeId.ROADMAP
         });

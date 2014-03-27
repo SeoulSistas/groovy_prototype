@@ -11,6 +11,24 @@
  *= require_self
  *= require_tree .
  */
+
+#header {
+  height: 50px;
+  margin-top: 10px;
+  border: 0px;
+  background-color: #ffffff;
+  text-align: center;
+}
+
+#filter-map-canvas {
+  margin: 30px auto;
+}
+
+#all_questions {
+  width: 75%;
+  margin: 0 auto;
+}
+
 #new_user .ui-input-text { 
   margin: 5px;
   padding: 10px;
